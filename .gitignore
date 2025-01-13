@@ -116,3 +116,5 @@ compile_commands.json
 .clangd/
 .cache/
 
+# nix
+/result
