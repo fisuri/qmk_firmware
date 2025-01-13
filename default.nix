@@ -1,12 +1,16 @@
 {
   pkgs ? import <nixpkgs> {},
   buildType ? "all",
+  lib,
 }: let
   repoBranch = "feature/add_fisuri_lotus58";
   repoOwner = "fisuri";
   repo = "qmk_firmware";
   repoRev = "refs/heads/${repoBranch}";
   repoSHA256 = "sha256-rYHM6cS1XwnchLIN1wD/P4LAxirHKpg7S5/FJe4SY6Y=";
+
+  # repoSHA256 = "";
+  repoSHA256 = lib.fakeHash;
 
   src = pkgs.fetchFromGitHub {
     owner = repoOwner;
